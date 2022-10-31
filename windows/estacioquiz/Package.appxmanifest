@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="eb4529cd-7e02-4e98-815a-396a1c229f8c"
-    Publisher="CN=julio"
+    Name="0b7ba1ea-745f-4ba1-8291-5b279f326079"
+    Publisher="CN=Julio"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="eb4529cd-7e02-4e98-815a-396a1c229f8c" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="0b7ba1ea-745f-4ba1-8291-5b279f326079" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>estacioquiz</DisplayName>
-    <PublisherDisplayName>julio</PublisherDisplayName>
+    <PublisherDisplayName>Julio</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
