@@ -12,12 +12,12 @@ import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './styles'
 
-export default function Home() {
+export default function Success() {
 
   const navigation = useNavigation();
-  
+
   function next(){
-    navigation.navigate('Success')
+    navigation.navigate('Home')
   }
 
   return (
@@ -27,7 +27,7 @@ export default function Home() {
     >
   
       <Image
-      source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0006_T_Errou.png')}
+      source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0005_T_Acertou.png')}
       />
       <TouchableOpacity onPress={next}
       style={{
@@ -37,7 +37,8 @@ export default function Home() {
 
       </TouchableOpacity>
 
-    
+      
+
 
     </ImageBackground>
 
