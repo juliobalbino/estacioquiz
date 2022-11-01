@@ -12,12 +12,22 @@ import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './styles'
 
-export default function Success() {
+export default function Success({ route }) {
+
+  const {
+    count
+} = route.params;
 
   const navigation = useNavigation();
 
   function next(){
-    navigation.navigate('Home')
+    if(count == 1){
+      navigation.navigate('Responsabilizacao', { count: count })
+    } else if (count == 2 ){
+      navigation.navigate('Estrategia', { count: count } )
+    }else {
+      navigation.navigate('Metafora')
+    }
   }
 
   return (

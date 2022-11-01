@@ -17,7 +17,7 @@ export default function Home() {
   const navigation = useNavigation();
 
   function next() {
-    navigation.navigate('Success')
+    navigation.navigate('Capacitismo')
   }
 
   return (

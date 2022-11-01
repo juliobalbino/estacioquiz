@@ -17,7 +17,7 @@ export default function Failure() {
   const navigation = useNavigation();
   
   function next(){
-    navigation.navigate('Success')
+    navigation.navigate('Home')
   }
 
   return (

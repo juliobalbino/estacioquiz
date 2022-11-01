@@ -17,10 +17,11 @@ export default function Congratulations() {
   const navigation = useNavigation();
 
   function next() {
-    navigation.navigate('Success')
+    navigation.navigate('Home')
   }
 
   return (
+    <TouchableOpacity onPress={next}>
     <ImageBackground
       style={styles.bckGnd}
       source={require('../../assets/comBaixo.png')}
@@ -37,6 +38,7 @@ export default function Congratulations() {
       />
 
     </ImageBackground>
+    </TouchableOpacity>
   );
 
 }
