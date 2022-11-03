@@ -15,24 +15,26 @@ import { styles } from './styles'
 export default function Failure() {
 
   const navigation = useNavigation();
-  
-  function next(){
+
+  function next() {
     navigation.navigate('Home')
   }
 
   return (
     <ImageBackground
       style={styles.bckGnd}
-      source={require('../../assets/comBaixo.png')}
+      source={require('../../assets/background.png')}
     >
       <Image
-      source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0006_T_Errou.png')}
+        source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0006_T_Errou.png')}
+        style={{ width: "64%", height: "20%" }}
       />
       <TouchableOpacity onPress={next}
-      style={{
-      width: 700, height: 150,
-      position: 'relative',
-      top: -140}}>
+        style={{
+          width: "44%", height: "5%",
+          position: 'relative',
+          top: -180
+        }}>
       </TouchableOpacity>
     </ImageBackground>
 
