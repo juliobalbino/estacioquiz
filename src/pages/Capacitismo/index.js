@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import {
   View,
   Image,
@@ -25,6 +25,22 @@ export default function Capacitismo() {
   var perg1 = false
   var perg2 = false
   var perg3 = false
+  var oneSec
+
+  const [counter, setCounter] = useState(40);
+  useEffect(() => {
+    if (counter < 0) {
+    clearTimeout(oneSec)
+
+      return navigation.navigate('Home');
+    }
+    oneSec = setTimeout(() => {
+      setCounter(counter - 1);
+    }, 1000);
+
+  }, [counter]);
+
+
 
   function next(quantity) {
     doubleTouch = doubleTouch + quantity
@@ -36,6 +52,7 @@ export default function Capacitismo() {
     }
     if (doubleTouch == 2) {
       count++
+      setCounter(0)
       navigation.navigate('Success', { count: count })
     }
   }
@@ -74,9 +91,9 @@ export default function Capacitismo() {
       >
         <Image
           source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0001_T_Perguntas_4.png')}
-          style={{ marginTop: 80, width: "72%", height: "45.5%" }}
+          style={{ marginTop: 150, width: "72%", height: "45.5%" }}
         />
-        <TouchableOpacity onPress={() => { next(1)}}
+        <TouchableOpacity onPress={() => { next(1) }}
           style={{
             width: "62%", height: "5%",
             position: 'relative',
@@ -108,6 +125,9 @@ export default function Capacitismo() {
             borderWidth: 4,
           }}>
         </TouchableOpacity>
+        <View style={{ position: 'relative', top: -400 , backgroundColor : '#144BC8', padding : 20, borderRadius:10}}>
+          <Text style={{ fontSize: 90, color : 'white' }}>{counter} s</Text>
+        </View>
       </ImageBackground>
     </>
   );

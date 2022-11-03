@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component , useEffect , useState} from 'react';
 import {
   View,
   Image,
@@ -19,6 +19,16 @@ export default function Success({ route }) {
   } = route.params;
 
   const navigation = useNavigation();
+  const [counter, setCounter] = useState(40);
+  useEffect(() => {
+    if (counter < 0) {
+      return navigation.navigate('Home');
+    }
+    setTimeout(() => {
+      setCounter(counter - 1);
+      console.log(counter);
+    }, 1000);
+  }, [counter]);
 
   function next() {
     if (count == 1) {

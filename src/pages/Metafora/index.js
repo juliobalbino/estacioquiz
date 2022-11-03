@@ -1,4 +1,4 @@
-import React, { Component , useState} from 'react';
+import React, { Component , useState, useEffect} from 'react';
 import {
   View,
   Image,
@@ -25,6 +25,17 @@ export default function Metafora({ }) {
   var perg1 = false
   var perg2 = false
   var perg3 = false
+
+  const [counter, setCounter] = useState(40);
+  useEffect(() => {
+    if (counter < 0) {
+      return navigation.navigate('Home');
+    }
+    setTimeout(() => {
+      setCounter(counter - 1);
+      console.log(counter);
+    }, 1000);
+  }, [counter]);
 
   function next(quantity) {
     doubleTouch = doubleTouch + quantity
@@ -106,6 +117,9 @@ export default function Metafora({ }) {
             borderWidth: 4,
           }}>
         </TouchableOpacity>
+        <View style={{ position: 'relative', top: -400 , backgroundColor : '#144BC8', padding : 20, borderRadius:10}}>
+          <Text style={{ fontSize: 90, color : 'white' }}>{counter} s</Text>
+        </View>
     </ImageBackground>
   );
 

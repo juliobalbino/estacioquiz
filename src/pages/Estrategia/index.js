@@ -1,5 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState , useEffect} from 'react';
 import {
+  View,
+  Text,
   Image,
   ImageBackground,
   TouchableOpacity,
@@ -26,6 +28,18 @@ export default function Estrategia({ route }) {
   } = route.params;
 
   let countb = count
+
+  const [counter, setCounter] = useState(40);
+  useEffect(() => {
+    if (counter < 0) {
+      return navigation.navigate('Home');
+    }
+    setTimeout(() => {
+      setCounter(counter - 1);
+      console.log(counter);
+    }, 1000);
+  }, [counter]);
+
 
   function next(quantity) {
     doubleTouch = doubleTouch + quantity
@@ -107,6 +121,9 @@ export default function Estrategia({ route }) {
             borderWidth: 4,
           }}>
         </TouchableOpacity>
+        <View style={{ position: 'relative', top: -400 , backgroundColor : '#144BC8', padding : 20, borderRadius:10}}>
+          <Text style={{ fontSize: 90, color : 'white' }}>{counter} s</Text>
+        </View>
     </ImageBackground>
   );
 
