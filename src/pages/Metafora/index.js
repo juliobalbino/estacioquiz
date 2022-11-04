@@ -73,21 +73,18 @@ export default function Metafora({ }) {
         source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0004_T_Perguntas_1.png')}
         style={styles.imgpresethd}
       />
-      <TouchableOpacity onPress={() => { next(1) }}
-        style={[styles.apresethd, { borderColor: color }]}>
+      <TouchableOpacity onPress={() => { failure3(1) }}
+        style={[styles.apresethd, { borderColor: color3 }]}>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => next(1)}
+        style={[styles.bpresethd, { borderColor: color }]}>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => failure2(1)}
-        style={[styles.bpresethd, { borderColor: color2 }]}>
+        style={[styles.cpresethd, { borderColor: color2 }]}>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => failure3(1)}
-        style={[styles.cpresethd, { borderColor: color3 }]}>
-      </TouchableOpacity>
-
-      <View style={styles.timerpresethd}>
-        <Text style={{ fontSize: 90, color: 'white' }}>{counter} s</Text>
-      </View>
     </ImageBackground>
   );
 

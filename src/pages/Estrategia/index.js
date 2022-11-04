@@ -80,21 +80,19 @@ export default function Estrategia({ route }) {
         style={styles.imgpresethd}
       />
 
-      <TouchableOpacity onPress={() => { next(1) }}
-        style={[styles.apresethd, { borderColor: color }]}>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => failure2(1)}
-        style={[styles.bpresethd, { borderColor: color2 }]}>
+      <TouchableOpacity onPress={() => { failure2(1) }}
+        style={[styles.apresethd, { borderColor: color2}]}>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => failure3(1)}
-        style={[styles.cpresethd, { borderColor: color3 }]}>
+        style={[styles.bpresethd, { borderColor: color3 }]}>
       </TouchableOpacity>
 
-      <View style={styles.timerpresethd}>
-        <Text style={{ fontSize: 90, color: 'white' }}>{counter} s</Text>
-      </View>
+      <TouchableOpacity onPress={() => next(1)}
+        style={[styles.cpresethd, { borderColor: color }]}>
+      </TouchableOpacity>
+
+
     </ImageBackground>
   );
 

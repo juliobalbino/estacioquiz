@@ -89,10 +89,6 @@ export default function Capacitismo() {
           style={[styles.cpresethd, { borderColor: color3 }]}>
         </TouchableOpacity>
 
-        <View style={styles.timerpresethd}>
-          <Text style={{ fontSize: 90, color: 'white' }}>{counter} s</Text>
-        </View>
-
       </ImageBackground>
     </>
   );
