@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
   StatusBar,
   ScrollView,
+  Touchable,
+  TouchableHighlight,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -21,12 +23,12 @@ export default function Home() {
   }
 
   return (
-    <TouchableOpacity onPress={next}>
+    <TouchableHighlight onPress={next}>
       <Image
         style={styles.bckGnd}
         source={require('../../assets/GIF_EST0054NP019-Mub-SP-Quizz-Enem-1080x1920.gif')}
       />
-    </TouchableOpacity>
+    </TouchableHighlight>
   );
 
 }

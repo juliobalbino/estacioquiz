@@ -7,10 +7,12 @@ import {
   TouchableOpacity,
   StatusBar,
   ScrollView,
+  TouchableHighlight,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './styles';
+
 
 export default function Congratulations() {
 
@@ -21,7 +23,7 @@ export default function Congratulations() {
   }
 
   return (
-    <TouchableOpacity onPress={next}>
+    <TouchableHighlight onPress={next}>
       <ImageBackground
         style={styles.bckGnd}
         source={require('../../assets/leve.png')}
@@ -38,7 +40,7 @@ export default function Congratulations() {
 
         />
       </ImageBackground>
-    </TouchableOpacity>
+    </TouchableHighlight>
   );
 
 }
