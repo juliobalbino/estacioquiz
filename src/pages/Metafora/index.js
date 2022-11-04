@@ -1,4 +1,4 @@
-import React, { Component , useState, useEffect} from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import {
   View,
   Image,
@@ -81,45 +81,25 @@ export default function Metafora({ }) {
       style={styles.bckGnd}
       source={require('../../assets/background.png')}
     >
-     <Image
-          source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0004_T_Perguntas_1.png')}
-          style={{ marginTop: 90, width: "72%", height: "45.5%" }}
-        />
-        <TouchableOpacity onPress={() => { next(1)}}
-          style={{
-            width: "63%", height: "4%",
-            position: 'relative',
-            top: -750,
-            borderRadius: 15,
-            borderColor: color,
-            borderWidth: 4,
-          }}>
-        </TouchableOpacity>
+      <Image
+        source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0004_T_Perguntas_1.png')}
+        style={styles.imgpresethd}
+      />
+      <TouchableOpacity onPress={() => { next(1) }}
+        style={[styles.apresethd, { borderColor: color }]}>
+      </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => failure2(1)}
-          style={{
-            width: "63%", height: "4%",
-            position: 'relative',
-            top: -780,
-            borderRadius: 15,
-            borderColor: color2,
-            borderWidth: 4,
+      <TouchableOpacity onPress={() => failure2(1)}
+        style={[styles.bpresethd, { borderColor: color2 }]}>
+      </TouchableOpacity>
 
-          }}>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => failure3(1)}
-          style={{
-            width: "63%", height: "4%",
-            position: 'relative',
-            top: -810,
-            borderRadius: 15,
-            borderColor: color3,
-            borderWidth: 4,
-          }}>
-        </TouchableOpacity>
-        <View style={{ position: 'relative', top: -400 , backgroundColor : '#144BC8', padding : 20, borderRadius:10}}>
-          <Text style={{ fontSize: 90, color : 'white' }}>{counter} s</Text>
-        </View>
+      <TouchableOpacity onPress={() => failure3(1)}
+        style={[styles.cpresethd, { borderColor: color3 }]}>
+      </TouchableOpacity>
+
+      <View style={styles.timerpresethd}>
+        <Text style={{ fontSize: 90, color: 'white' }}>{counter} s</Text>
+      </View>
     </ImageBackground>
   );
 

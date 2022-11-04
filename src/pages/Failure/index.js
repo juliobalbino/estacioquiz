@@ -38,14 +38,11 @@ export default function Failure() {
     >
       <Image
         source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0006_T_Errou.png')}
-        style={{ width: "64%", height: "20%" }}
       />
+
       <TouchableOpacity onPress={next}
-        style={{
-          width: "44%", height: "5%",
-          position: 'relative',
-          top: -180
-        }}>
+        style={styles.tcpresethd 
+        }>
       </TouchableOpacity>
     </ImageBackground>
 

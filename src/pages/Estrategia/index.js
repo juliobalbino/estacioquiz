@@ -1,4 +1,4 @@
-import React, { Component, useState , useEffect} from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -53,7 +53,7 @@ export default function Estrategia({ route }) {
       countb++
       navigation.navigate('Success', { count: countb })
     }
-   
+
   }
 
   function failure2(quantity) {
@@ -89,41 +89,24 @@ export default function Estrategia({ route }) {
     >
       <Image
         source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0003_T_Perguntas_2.png')}
-        style={{marginTop: 80, width: "72%", height: "45.5%"}}
+        style={styles.imgpresethd}
       />
-      <TouchableOpacity onPress={() => { next(1)}}
-        style={{
-          width: "62%", height: "4%",
-            position: 'relative',
-            top: -770,
-            borderRadius: 15,
-            borderColor: color,
-            borderWidth: 4,
-        }}>
+
+      <TouchableOpacity onPress={() => { next(1) }}
+        style={[styles.apresethd, { borderColor: color }]}>
       </TouchableOpacity>
+
       <TouchableOpacity onPress={() => failure2(1)}
-          style={{
-            width: "62%", height: "5%",
-            position: 'relative',
-            top: -790,
-            borderRadius: 15,
-            borderColor: color2,
-            borderWidth: 4,
-          }}>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => failure3(1)}
-          style={{
-            width: "62%", height: "5%",
-            position: 'relative',
-            top: -810,
-            borderRadius: 15,
-            borderColor: color3,
-            borderWidth: 4,
-          }}>
-        </TouchableOpacity>
-        <View style={{ position: 'relative', top: -400 , backgroundColor : '#144BC8', padding : 20, borderRadius:10}}>
-          <Text style={{ fontSize: 90, color : 'white' }}>{counter} s</Text>
-        </View>
+        style={[styles.bpresethd, { borderColor: color2 }]}>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => failure3(1)}
+        style={[styles.cpresethd, { borderColor: color3 }]}>
+      </TouchableOpacity>
+
+      <View style={styles.timerpresethd}>
+        <Text style={{ fontSize: 90, color: 'white' }}>{counter} s</Text>
+      </View>
     </ImageBackground>
   );
 

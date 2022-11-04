@@ -1,4 +1,4 @@
-import React, { Component , useEffect , useState} from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import {
   View,
   Image,
@@ -47,15 +47,12 @@ export default function Success({ route }) {
     >
       <Image
         source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0005_T_Acertou.png')}
-        style={{ width: "62%", height: "20%" }}
       />
+
       <TouchableOpacity onPress={next}
-        style={{
-          width: "52%", height: "5%",
-          position: 'relative',
-          top: -204
-        }}>
+        style={styles.tcpresethd}>
       </TouchableOpacity>
+
     </ImageBackground>
   );
 
