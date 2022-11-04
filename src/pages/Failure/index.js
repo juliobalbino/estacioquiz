@@ -24,7 +24,7 @@ export default function Failure() {
   return (
     <ImageBackground
       style={styles.bckGnd}
-      source={require('../../assets/background.png')}
+      source={require('../../assets/leve.png')}
     >
       <Image
         source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0006_T_Errou.png')}
