@@ -15,17 +15,7 @@ import { styles } from './styles'
 export default function Failure() {
 
   const navigation = useNavigation();
-  const [counter, setCounter] = useState(40);
 
-  useEffect(() => {
-    if (counter < 0) {
-      return navigation.navigate('Home');
-    }
-    setTimeout(() => {
-      setCounter(counter - 1);
-      console.log(counter);
-    }, 1000);
-  }, [counter]);
 
   function next() {
     navigation.navigate('Home')

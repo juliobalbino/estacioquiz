@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Image,
@@ -18,65 +18,49 @@ export default function Capacitismo() {
   const [color, setColor] = useState('transparent');
   const [color2, setColor2] = useState('transparent');
   const [color3, setColor3] = useState('transparent');
-  var doubleTouch = 0
-  var doubleTouch2 = 0
-  var doubleTouch3 = 0
+  const [ doubleTouch, setDoubleTouch] = useState(1)
+  const [ doubleTouch2, setDoubleTouch2] = useState(1)
+  const [ doubleTouch3, setDoubleTouch3] = useState(1)
+
   let count = 0
-  var perg1 = false
-  var perg2 = false
-  var perg3 = false
-  var oneSec
 
-  const [counter, setCounter] = useState(40);
-  useEffect(() => {
-    if (counter < 0) {
-    clearTimeout(oneSec)
-
-      return navigation.navigate('Home');
-    }
-    oneSec = setTimeout(() => {
-      setCounter(counter - 1);
-    }, 1000);
-
-  }, [counter]);
-
-
-
-  function next(quantity) {
-    doubleTouch = doubleTouch + quantity
-    perg1 = true
-    if (doubleTouch == 1 && perg1 == true) {
+  function next() {
+    setDoubleTouch(doubleTouch + 1)
+    if (doubleTouch == 1) {
       setColor('yellow')
       setColor2('transparent')
       setColor3('transparent')
+      setDoubleTouch2(1)
+      setDoubleTouch3(1)
     }
     if (doubleTouch == 2) {
       count++
-      setCounter(0)
       navigation.navigate('Success', { count: count })
     }
   }
 
-  function failure2(quantity) {
-    doubleTouch2 = doubleTouch2 + quantity
-    perg2 = true
-    if (doubleTouch2 == 1 && perg2 == true) {
+  function failure2() {
+    setDoubleTouch2(doubleTouch2 + 1)
+    if (doubleTouch2 == 1) {
       setColor('transparent')
       setColor2('yellow')
       setColor3('transparent')
+      setDoubleTouch(1)
+      setDoubleTouch3(1)
     }
     if (doubleTouch2 == 2) {
       navigation.navigate('Failure')
     }
   }
 
-  function failure3(quantity) {
-    doubleTouch3 = doubleTouch3 + quantity
-    perg3 = true
-    if (doubleTouch3 == 1 && perg3 == true) {
+  function failure3() {
+    setDoubleTouch3(doubleTouch3 + 1)
+    if (doubleTouch3 == 1) {
       setColor('transparent')
       setColor2('transparent')
       setColor3('yellow')
+      setDoubleTouch2(1)
+      setDoubleTouch(1)
     }
     if (doubleTouch3 == 2) {
       navigation.navigate('Failure')
@@ -87,13 +71,13 @@ export default function Capacitismo() {
     <>
       <ImageBackground
         style={styles.bckGnd}
-        source={require('../../assets/background.png')}
+        source={require('../../assets/leve.png')}
       >
         <Image
           source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0001_T_Perguntas_4.png')}
           style={{ marginTop: 150, width: "72%", height: "45.5%" }}
         />
-        <TouchableOpacity onPress={() => { next(1) }}
+        <TouchableOpacity onPress={() => { next()}}
           style={{
             width: "62%", height: "5%",
             position: 'relative',
@@ -104,7 +88,7 @@ export default function Capacitismo() {
           }}>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => failure2(1)}
+        <TouchableOpacity onPress={() => failure2()}
           style={{
             width: "62%", height: "5%",
             position: 'relative',
@@ -115,7 +99,7 @@ export default function Capacitismo() {
 
           }}>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => failure3(1)}
+        <TouchableOpacity onPress={() => failure3()}
           style={{
             width: "62%", height: "5%",
             position: 'relative',
@@ -125,9 +109,6 @@ export default function Capacitismo() {
             borderWidth: 4,
           }}>
         </TouchableOpacity>
-        <View style={{ position: 'relative', top: -400 , backgroundColor : '#144BC8', padding : 20, borderRadius:10}}>
-          <Text style={{ fontSize: 90, color : 'white' }}>{counter} s</Text>
-        </View>
       </ImageBackground>
     </>
   );
