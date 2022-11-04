@@ -87,7 +87,7 @@ useEffect(() => {
   return (
     <ImageBackground
       style={styles.bckGnd}
-      source={require('../../assets/background.png')}
+      source={require('../../assets/leve.png')}
     >
       <Image
         source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0002_T_Perguntas_3.png')}
