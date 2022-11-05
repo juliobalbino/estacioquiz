@@ -14,20 +14,21 @@ import { styles } from './styles'
 
 export default function Success({ route }) {
 
-  const {
-    count
-  } = route.params;
+  // const {
+  //   // count,
+  //   // timer
+  // } = route.params;
 
   const navigation = useNavigation();
 
   function next() {
-    if (count == 1) {
-      navigation.navigate('Responsabilizacao', { count: count })
-    } else if (count == 2) {
-      navigation.navigate('Estrategia', { count: count })
-    } else {
-      navigation.navigate('Metafora')
-    }
+    // if (count == 1) {
+    //   navigation.navigate('Responsabilizacao', { count: count })
+    // } else if (count == 2) {
+    //   navigation.navigate('Estrategia', { count: count })
+    // } else {
+    //   navigation.navigate('Metafora')
+    // }
   }
 
   return (
