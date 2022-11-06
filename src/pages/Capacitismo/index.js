@@ -11,6 +11,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './styles'
+import Timer from '../components/Timer';
 
 export default function Capacitismo() {
 
@@ -18,9 +19,9 @@ export default function Capacitismo() {
   const [color, setColor] = useState('transparent');
   const [color2, setColor2] = useState('transparent');
   const [color3, setColor3] = useState('transparent');
-  const [ doubleTouch, setDoubleTouch] = useState(1)
-  const [ doubleTouch2, setDoubleTouch2] = useState(1)
-  const [ doubleTouch3, setDoubleTouch3] = useState(1)
+  const [doubleTouch, setDoubleTouch] = useState(1)
+  const [doubleTouch2, setDoubleTouch2] = useState(1)
+  const [doubleTouch3, setDoubleTouch3] = useState(1)
 
   let count = 0
 
@@ -69,6 +70,7 @@ export default function Capacitismo() {
 
   return (
     <>
+      <Timer tempo={45} />
       <ImageBackground
         style={styles.bckGnd}
         source={require('../../assets/leve.png')}

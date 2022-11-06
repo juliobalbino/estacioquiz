@@ -9,6 +9,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './styles'
+import Timer from '../components/Timer';
 
 export default function Estrategia({ route }) {
 
@@ -71,6 +72,8 @@ export default function Estrategia({ route }) {
   }
 
   return (
+    <>
+    <Timer tempo={45}/>
     <ImageBackground
       style={styles.bckGnd}
       source={require('../../assets/leve.png')}
@@ -94,6 +97,7 @@ export default function Estrategia({ route }) {
 
 
     </ImageBackground>
+    </>
   );
 
 }

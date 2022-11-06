@@ -10,7 +10,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import Timer from '../components/Timer';
 import { styles } from './styles';
 
 
@@ -23,24 +23,25 @@ export default function Congratulations() {
   }
 
   return (
-    <TouchableHighlight onPress={next}>
-      <ImageBackground
-        style={styles.bckGnd}
-        source={require('../../assets/leve.png')}
-      >
-        <Image
-          source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0000s_0000_Texto.png')}
-        />
-        <Image
-          source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0000s_0001_Escaneie-o-QR-Code--e-aproveite-mais-do--ENEMVERSO.png')}
-          style={{ marginVertical: 60 }}
-        />
-        <Image
-          source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0000s_0002_qrcode_link_2.png')}
+    <>
+      <Timer tempo={45} />
+        <ImageBackground
+          style={styles.bckGnd}
+          source={require('../../assets/leve.png')}
+        >
+          <Image
+            source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0000s_0000_Texto.png')}
+          />
+          <Image
+            source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0000s_0001_Escaneie-o-QR-Code--e-aproveite-mais-do--ENEMVERSO.png')}
+            style={{ marginVertical: 60 }}
+          />
+          <Image
+            source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0000s_0002_qrcode_link_2.png')}
 
-        />
-      </ImageBackground>
-    </TouchableHighlight>
+          />
+        </ImageBackground>
+    </>
   );
 
 }

@@ -11,6 +11,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './styles'
+import Timer from '../components/Timer';
 
 export default function Metafora({ }) {
 
@@ -18,9 +19,9 @@ export default function Metafora({ }) {
   const [color, setColor] = useState('transparent');
   const [color2, setColor2] = useState('transparent');
   const [color3, setColor3] = useState('transparent');
-  const [ doubleTouch, setDoubleTouch] = useState(1)
-  const [ doubleTouch2, setDoubleTouch2] = useState(1)
-  const [ doubleTouch3, setDoubleTouch3] = useState(1)
+  const [doubleTouch, setDoubleTouch] = useState(1)
+  const [doubleTouch2, setDoubleTouch2] = useState(1)
+  const [doubleTouch3, setDoubleTouch3] = useState(1)
 
   function next() {
     setDoubleTouch(doubleTouch + 1)
@@ -65,27 +66,30 @@ export default function Metafora({ }) {
   }
 
   return (
-    <ImageBackground
-      style={styles.bckGnd}
-      source={require('../../assets/leve.png')}
-    >
-      <Image
-        source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0004_T_Perguntas_1.png')}
-        style={styles.imgpresethd}
-      />
-      <TouchableOpacity onPress={() => { failure3(1) }}
-        style={[styles.apresethd, { borderColor: color3 }]}>
-      </TouchableOpacity>
+    <>
+      <Timer tempo={45} />
+      <ImageBackground
+        style={styles.bckGnd}
+        source={require('../../assets/leve.png')}
+      >
+        <Image
+          source={require('../../assets/EST0054NP019-Mub-SP-Quizz-Enem-1080x1920_0004_T_Perguntas_1.png')}
+          style={styles.imgpresethd}
+        />
+        <TouchableOpacity onPress={() => { failure3(1) }}
+          style={[styles.apresethd, { borderColor: color3 }]}>
+        </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => next(1)}
-        style={[styles.bpresethd, { borderColor: color }]}>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => next(1)}
+          style={[styles.bpresethd, { borderColor: color }]}>
+        </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => failure2(1)}
-        style={[styles.cpresethd, { borderColor: color2 }]}>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => failure2(1)}
+          style={[styles.cpresethd, { borderColor: color2 }]}>
+        </TouchableOpacity>
 
-    </ImageBackground>
+      </ImageBackground>
+    </>
   );
 
 }
